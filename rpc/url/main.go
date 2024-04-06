@@ -14,7 +14,7 @@ func main() {
 	model.ConnDB()
 	defer model.DB.Close()
 
-	addr, _ := net.ResolveTCPAddr("tcp", "127.0.0.1:8889")
+	addr, _ := net.ResolveTCPAddr("tcp", "0.0.0.0:8889")
 
 	svr := urlservice.NewServer(new(UrlServiceImpl),server.WithServiceAddr(addr))
 
