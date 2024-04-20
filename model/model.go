@@ -37,7 +37,7 @@ var RedisClient *redis.Client
 
 func ConnDB()  {
 	var err error
-	dsn := "root:147258aa@tcp(172.17.0.3:3306)/mysql?charset=utf8mb4&parseTime=True&loc=Local"	
+	dsn := "root:147258aa@tcp(127.0.0.1:3306)/mysql?charset=utf8mb4&parseTime=True&loc=Local"	//172.17.0.3:3306
 
 	DB,err=gorm.Open("mysql",dsn)
 
@@ -49,8 +49,8 @@ func ConnDB()  {
 
 	//连接redis
 	RedisClient=redis.NewClient(&redis.Options{
-		Addr: "172.17.0.2:6379",	
-		Password: "",
+		Addr: "127.0.0.1:6379",		//172.17.0.2:6379
+		Password: "123456",
 		DB: 0,
 	})
 
